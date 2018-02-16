@@ -1,0 +1,20 @@
+<html>
+ <head>
+ </head>
+ <body>
+ <script>
+ var SamsPower = "0000 006C 0000 0022 00AD 00AD 0016 0041 0016 0041 0016 0041 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0041 0016 0041 0016 0041 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0041 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0041 0016 0016 0016 0041 0016 0041 0016 0041 0016 0041 0016 0041 0016 0041 0016 06FB";
+ var SharpPower = "0000 006c 0000 0020 000a 0046 000a 001e 000a 001e 000a 001e 000a 001e 000a 001e 000a 0046 000a 0046 000a 001e 000a 0046 000a 001e 000a 001e 000a 001e 000a 0046 000a 001e 000a 06d7 000a 0046 000a 001e 000a 001e 000a 001e 000a 001e 000a 0046 000a 001e 000a 001e 000a 0046 000a 001e 000a 0046 000a 0046 000a 0046 000a 001e 000a 0046 000a 06d7";
+ var Samsung = {
+  Power:require("pronto").decode(SamsPower);
+ }
+ var Sharp = {
+  Power:require("pronto").decode(SharpPower);
+ }
+ function sendIR(array){
+ Puck.write('Puck.IR(['array']);\n')
+ }
+  <script src="https://www.puck-js.com/puck.js"></script>
+  <button onclick="sendIR(Sharp.Power)">On</button>
+ </body>
+</html>
